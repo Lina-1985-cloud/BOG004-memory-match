@@ -1,26 +1,37 @@
-//
-// Para incluir los diferentes sets de cartas podemos _importar_ el archivo
-// JavasSript que contenga el `export` correspondiente...
-//
-// import pokemon from '../data/pokemon/pokemon.js';
-// console.log(pokemon);
-//
-// O alternativamente podríamos cargar el JSON de forma asíncrona usando
-// `fetch` en el momento que consideremos necesario.
-//
-// fetch('./data/pokemon/pokemon.json')
-//   .then(resp => resp.json())
-//   .then(console.log)
-//   .catch(console.error);
-//
+import pokemon from '../data/pokemon/pokemon.js'
 
-const App = () => {
-  const el = document.createElement('div');
+var data = pokemon
 
-  el.className = 'App';
-  el.textContent = 'Hola mundo!';
+//Modulo 1 generar tablero
+const generarTablero = () =>{
+  const elementos = document.createElement('section');
+  elementos.contains =[]
+  let tarjetas = []
+      for(let j = 0; j<2; j++){
+          for(let i = 0; i < 9; i++){
+              tarjetas.push(`
+              <div class="area-tarjeta"(${i})">
+                  <div class="tarjeta" id="tarjeta${i}">
+                      <div class="cara trasera" id="trasera${i}">
+                      <img src="${data.items[i].image}" alt="">
+                      </div>
+                  </div>
+                  <div class="cara superior">
+                          <i class="far fa-question-circle"></i>
+                      </div>
+                  </div>
+              </div>     
+          `) 
+          console.log(data.items[i].image)
+          }
+          data.items.sort(()=>Math.random()-0.5)
+          elementos.innerHTML = tarjetas.join("") 
+      }                
+      
+      return elementos
 
-  return el;
-};
+}
+generarTablero()
+export {generarTablero}
 
-export default App;
+//MOdulo 2.
