@@ -1,5 +1,25 @@
 import pokemon from '../data/pokemon/pokemon.js'
 
+// Cambio de pantalla
+/*const boton= document.getElementById('play')
+document.getElementById("indexPage").style.display= 'block'
+//document.querySelector("section").style.display= 'none'
+boton.addEventListener('click', () => {
+     
+    console.log("hiciste click")
+} )
+
+ // document.querySelector('section').style.display=block*/
+const play= document.getElementById('play');
+const indexPage= document.getElementById('indexPage').style.display= 'block';
+const section= document.getElementById('root').style.display= 'none';
+  play.addEventListener('click', ()=>{
+     indexPage= document.getElementById('indexPage').style.display= 'none';
+     section= document.getElementById('root').style.display= 'block';
+    
+
+  } )
+
 var data = pokemon
 
 //Modulo 1 generar tablero
@@ -34,4 +54,4 @@ const generarTablero = () =>{
 generarTablero()
 export {generarTablero}
 
-//MOdulo 2.
+
