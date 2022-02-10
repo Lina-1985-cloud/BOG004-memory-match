@@ -8,6 +8,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    
 }
 /* Header */
 figure{
@@ -18,11 +19,8 @@ figure{
     align-items: center;
     background-color: #ffcd05;
 }
-img{
-    width: 450px;
-}
 
-/* Section index page */
+/*************** Sección página principal ***************/
 h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
@@ -33,9 +31,12 @@ h1{
 h2{
     margin-bottom: 100px;
 }
+.bg-pokemon{
+    width: 450px;
+}
 .welcome{
     width: 600px;
-    height: 100vh;
+    height:79vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -87,4 +88,61 @@ footer{
     font-weight: 700;
     padding: 40px;
     text-align: center;
+}
+
+
+
+
+/*************** Segunda Pantalla ***************/
+
+
+section{
+    background-color: rgba(255, 255, 255, 0.404);
+    width: 850px;
+    height: 141vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+
+img{
+    width: 184px;
+}
+i{
+    font-size: 100px;
+}
+
+.area-tarjeta{
+    width: 25%;
+    height: 33.333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.caraSuperior{
+    position: relative;
+    width: 210px;
+    height: 210px; 
+    margin-left: 210px;
+    width: 210px;
+    height: 200px;
+    margin-top: 210px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ed1b24; 
+}
+
+.caraTrasera,
+.caraSuperior{
+    position: absolute;
+    border-radius: 20px;
+    /* border: 4px solid palevioletred; */
 }
