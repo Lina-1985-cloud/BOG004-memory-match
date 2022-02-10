@@ -5,7 +5,7 @@ import pokemon from '../data/pokemon/pokemon.js'
 document.getElementById('root').style.display= 'none';
 const play= document.getElementById('play');
     play.addEventListener('click', ()=>{
-        document.querySelector('section').style.display= 'none';
+        document.querySelector('div').style.display= 'none';
         const section = document.getElementById('root').style.display= 'block';
 } )
 
@@ -23,11 +23,11 @@ let tarjetas = []
             tarjetas.push(`
             <div class="area-tarjeta"(${i})">
                 <div class="tarjeta" id="tarjeta${i}">
-                    <div class="cara trasera" id="trasera${i}">
+                    <div class="caraTrasera" id="trasera${i}">
                     <img src="${data.items[i].image}" alt="">
                     </div>
                 </div>
-                <div class="cara superior">
+                <div class="caraSuperior">
                         <i class="far fa-question-circle"></i>
                     </div>
                 </div>
