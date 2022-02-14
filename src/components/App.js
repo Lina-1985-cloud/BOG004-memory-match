@@ -1,16 +1,5 @@
-import pokemon from '../data/pokemon/pokemon.js'
-
-//------------------ Cambio de pantalla-------------------
-
-document.getElementById('root').style.display= 'none';
-const play= document.getElementById('play');
-    play.addEventListener('click', ()=>{
-        document.querySelector('div').style.display= 'none';
-        const section = document.getElementById('root').style.display= 'block';
-} )
-
-
 //------------------Modulo 1 generar tablero-------------------
+import pokemon from '../data/pokemon/pokemon.js'
 
 var data = pokemon
 
@@ -21,13 +10,12 @@ let tarjetas = []
     for(let j = 0; j<2; j++){
         for(let i = 0; i < 9; i++){
             tarjetas.push(`
-            <div class="area-tarjeta"(${i})">
+            <div class="area tarjeta"(${i})">
                 <div class="tarjeta" id="tarjeta${i}">
-                    <div class="caraTrasera" id="trasera${i}">
-                    <img src="${data.items[i].image}" alt="">
+                    <div class="cara trasera" id="trasera${i}">
+                        <img src="${data.items[i].image}" alt="">
                     </div>
-                </div>
-                <div class="caraSuperior">
+                    <div class="cara delantera">
                         <i class="far fa-question-circle"></i>
                     </div>
                 </div>
@@ -42,6 +30,12 @@ let tarjetas = []
     return elementos
 
 }
+
+
+
+
+
+
 generarTablero()
 export {generarTablero}
 
