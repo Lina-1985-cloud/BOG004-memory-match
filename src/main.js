@@ -25,6 +25,20 @@ function voltearTarjeta() {
         console.log({ primeraTarjeta, segundaTarjeta });
         console.log(primeraTarjeta.dataset.pokemon);
         console.log(segundaTarjeta.dataset.pokemon);
+
+        if (primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon){
+            primeraTarjeta.removeEventListener('click' , voltearTarjeta);
+            segundaTarjeta.removeEventListener('click' , voltearTarjeta);
+        } else {
+            setTimeout(() => {
+                primeraTarjeta.classList.remove('voltear');
+                segundaTarjeta.classList.remove('voltear');
+            }, 1500 );
+            
+        }
+
+        console.log("la función se ejecuto")
+
     }
 }
 tarjetas.forEach((tarjeta) =>
