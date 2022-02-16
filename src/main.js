@@ -3,11 +3,12 @@ import { generarTablero } from "./components/App.js";
 document.getElementById("root").appendChild(generarTablero());
 
 // Cambio pantalla
+const section = (document.getElementById("root"))
 document.getElementById("root").style.display = "none";
 const play = document.getElementById("play");
 play.addEventListener("click", () => {
     document.querySelector("div").style.display = "none";
-    const section = (document.getElementById("root").style.display = "block");
+    section.style.display = "block";
 });
 
 // función click a las tarjetas
@@ -33,7 +34,7 @@ function voltearTarjeta() {
             setTimeout(() => {
                 primeraTarjeta.classList.remove('voltear');
                 segundaTarjeta.classList.remove('voltear');
-            }, 1500 );
+            }, 1000 );
             
         }
 
@@ -41,7 +42,6 @@ function voltearTarjeta() {
 
     }
 }
-tarjetas.forEach((tarjeta) =>
-    tarjeta.addEventListener("click", voltearTarjeta)
-);
+
+tarjetas.forEach((tarjeta) =>tarjeta.addEventListener("click", voltearTarjeta));
 

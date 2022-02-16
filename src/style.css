@@ -124,7 +124,7 @@ img{
     position: relative;
     transform-style: preserve-3d;
     transition: all 1s ease;
-    animation: iniciar 3s;
+    animation: iniciar 2s;
 }
 
 .delantera,

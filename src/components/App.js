@@ -35,10 +35,6 @@ let tarjetas = []
 
 
 
-
-
-
-
 generarTablero()
 export {generarTablero}
 
