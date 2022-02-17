@@ -3,8 +3,9 @@ import { generarTablero } from "./components/App.js";
 document.getElementById("root").appendChild(generarTablero());
 
 // Cambio pantalla
-const section = (document.getElementById("root"))
 document.getElementById("root").style.display = "none";
+document.getElementById('pantallaFinal').style.display = "none";
+const section = (document.getElementById("root"))
 const play = document.getElementById("play");
 play.addEventListener("click", () => {
     document.querySelector("div").style.display = "none";
@@ -15,6 +16,7 @@ play.addEventListener("click", () => {
 var tarjetaVolteada = false;
 var bloquearTablero = false;
 var primeraTarjeta, segundaTarjeta;
+var contadorDeParejas = 0
 
 const tarjetas = document.querySelectorAll(".tarjeta");
 function voltearTarjeta() {
@@ -38,16 +40,34 @@ function voltearTarjeta() {
 /* función para chequiar las parejas
 El operador ternario (?) nos permite remplazar un if y else validando las condiones true o false
 y ejecutando las expresiones*/ 
+
 function verParejas(){
     let sonPareja = primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon
-    sonPareja ? desabilitarTarjetas(): desplegarTarjetas();
+    //sonPareja ? desabilitarTarjetas(): desplegarTarjetas();
+    if (sonPareja){
+        contadorDeParejas += 1
+        desabilitarTarjetas()
+    }else {
+        desplegarTarjetas()
+        
+    }
+   
 }
 
 /* función para desabilitar las tarjetas */
 function desabilitarTarjetas (){
     primeraTarjeta.removeEventListener('click' , voltearTarjeta);
     segundaTarjeta.removeEventListener('click' , voltearTarjeta);
+
+    if (contadorDeParejas === 1){
+        
+        setTimeout(() => {
+        ganaste()   
+        },1000);
+
+    }
 }
+
 /*función para desplegar las tarjetas*/
 function desplegarTarjetas (){
     bloquearTablero = true;
@@ -63,3 +83,14 @@ tarjetas.forEach((tarjeta) =>
     tarjeta.addEventListener("click", voltearTarjeta)
 );
 
+function ganaste(){
+    document.getElementById("root").style.display = "none";
+    document.getElementById('pantallaFinal').style.display = "block";
+
+}
+let volverAlJuego = document.getElementById("volverAjugar")
+let terceraPantalla = document.getElementById("pantallaFinal")
+volverAlJuego.addEventListener("click", ()=>{
+    terceraPantalla.style.display = "none";
+    document.getElementById("root").style.display = "block";
+})

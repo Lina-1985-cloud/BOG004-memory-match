@@ -5,6 +5,7 @@ const data = pokemon
 
 const generarTablero = () =>{
 const elementos = document.createElement('section');
+elementos.className = 'tablero'
 elementos.contains =[]
 let tarjetas = []
     for(let j = 0; j<2; j++){

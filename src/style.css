@@ -178,3 +178,27 @@ img{
     }
 
 } 
+
+/*************** Pantalla Final ***************/
+.contenedor-pokemon{
+    background-color: #2973B9 ;
+    width: 650px;
+    height: 650px;
+}
+img{
+    width: 500px;
+}
+
+.felicitacion {
+    background-color: #FFCB05;
+    width: 800px;
+    height: 200px;
+    text-align: center; 
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    font-weight: 800;
+    margin-top: 200px;
+}
