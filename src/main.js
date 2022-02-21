@@ -27,15 +27,13 @@ function voltearTarjeta() {
         primeraTarjeta = this;
 
         return;
-    } 
-    // } else { Segundo click
+    } else{
         tarjetaVolteada = false;
         segundaTarjeta = this;
-    //     // console.log({ primeraTarjeta, segundaTarjeta });
-    //     // console.log(primeraTarjeta.dataset.pokemon);
-    //     // console.log(segundaTarjeta.dataset.pokemon);
-         verParejas();          
-   
+    
+        verParejas();          
+    }
+
 }
 /* función para chequiar las parejas
 El operador ternario (?) nos permite remplazar un if y else validando las condiones true o false
@@ -43,7 +41,6 @@ y ejecutando las expresiones*/
 
 function verParejas(){
     let sonPareja = primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon
-    //sonPareja ? desabilitarTarjetas(): desplegarTarjetas();
     if (sonPareja){
         contadorDeParejas += 1
         desabilitarTarjetas()
@@ -51,7 +48,6 @@ function verParejas(){
         desplegarTarjetas()
         
     }
-   
 }
 
 /* función para desabilitar las tarjetas */
@@ -88,9 +84,10 @@ function ganaste(){
     document.getElementById('pantallaFinal').style.display = "block";
 
 }
+
+// volver al juego
 let volverAlJuego = document.getElementById("volverAjugar")
-let terceraPantalla = document.getElementById("pantallaFinal")
 volverAlJuego.addEventListener("click", ()=>{
-    terceraPantalla.style.display = "none";
-    document.getElementById("root").style.display = "block";
+    location.reload('div')
+    document.querySelector("div").style.display = "none";
 })

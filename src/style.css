@@ -136,7 +136,7 @@ img{
 
 .cara{
     height: 180px;
-    position: absolute;
+    /* position: absolute; */
     font-size: 100px;
     display: flex;
     justify-content: center;
@@ -201,4 +201,21 @@ h2{
     font-size: 80px;
     font-weight: 800;
     margin-top: 200px;
+}
+
+
+/* mediaQueries */
+
+@media  screen and (min-width: 1024px) {
+    .welcome{
+        width: 900px;
+        height:80vh;
+        margin: 0 auto;
+        font-family:  Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        color: goldenrod;
+        position: relative;
+    }
+
+    
 }
