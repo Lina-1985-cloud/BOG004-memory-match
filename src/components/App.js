@@ -1,9 +1,9 @@
 //------------------Modulo 1 generar tablero-------------------
 import pokemon from '../data/pokemon/pokemon.js'
 
-const data = pokemon
 
 const generarTablero = () =>{
+const data = pokemon
 const elementos = document.createElement('section');
 elementos.className = 'tablero'
 elementos.contains =[]
@@ -22,21 +22,15 @@ let tarjetas = []
                 </div>
             </div>     
         `) 
-        console.log(data.items[i].image)
-        console.log(data.items[i].id)
-        
         }
         data.items.sort(()=>Math.random()-0.5)
         elementos.innerHTML = tarjetas.join("") 
     }                
     
     return elementos
-
 }
-
-
-
 generarTablero()
+
 export {generarTablero}
 
 
