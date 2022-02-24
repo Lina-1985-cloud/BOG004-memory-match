@@ -8,7 +8,7 @@ document.getElementById('pantallaFinal').style.display = "none";
 const section = (document.getElementById("root"))
 const play = document.getElementById("play");
 play.addEventListener("click", () => {
-    document.querySelector("div").style.display = "none";
+    document.querySelector("section").style.display = "none";
     section.style.display = "block";
 });
 
@@ -31,15 +31,13 @@ function voltearTarjeta() {
         tarjetaVolteada = false;
         segundaTarjeta = this;
     
-        verParejas();          
+        validarParejas();          
     }
 
 }
-/* función para chequiar las parejas
-El operador ternario (?) nos permite remplazar un if y else validando las condiones true o false
-y ejecutando las expresiones*/ 
+/* función para chequiar las parejas*/
 
-function verParejas(){
+function validarParejas(){
     let sonPareja = primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon
     if (sonPareja){
         contadorDeParejas += 1

@@ -4,44 +4,46 @@
 <head>
   <meta charset="utf-8">
   <title>Memory Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="/src/styleCards.css">
   <link rel="stylesheet" href="/pokemon-font/Pokemon Solid.ttf">
   <script src="https://kit.fontawesome.com/4de09098c3.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="contenedor">
   <!--Header-->
-  <header>
-    <figure>
+  <header class="header">
+    <figure class="imagenBaner">
       <img src="./images/bg-pokemon.png" class="bg-pokemon" alt="Background Pokémon">
     </figure>
   </header>
 
   <!--Section index page-->
-  <div class="welcome" id="indexPage">
-    <h1>Welcome</h1>
-    <main class="card">
-      <h3>The Memory Match game</h3>
-      <p class="info">Pressing play will take you to see 18 cards where you can see for a few seconds the images,
-        and then the game will start, while the clock running, and at the end it will give you the results and you can
-        play again and have the opportunity to improve your time
+  <section class="section" id="indexPage">
+    <article class="bienvenida">
+      <h1>Bienvenido Al Juego de Memoria de Pokémon</h1>
+      <p class="info">Al pulsar play verás 18 cartas donde podrás ver durante unos segundos las imágenes,
+        y luego el juego comenzará. Al terminar de seleccionar las parejas podrás volver a jugar, encontrando 
+        siempre las imágenes en diferentes posiciones!
       </p>
       <button class="btn-play" type="button" id="play" >Play</button>
-    </main>
-  </div>
+    </article>
+  </section>
 
 
   <!-- segunda pantalla -->
   <div id="root"></div>
 
   <!--Tercera Pantalla -->
-  <section id="pantallaFinal">
+  <section class=" section pantallaFinal" id="pantallaFinal">
     <figure class="contenedor-pokemon">
       <img src="./images/picachu.png" class="imagen-final" alt="picachu-pokémon">
     </figure>
-    <h2 class="felicitacion">FELICITACIONES </h2>
-    <button type="button" class="btn-play" id="volverAjugar">Volver a Jugar</button>
+    <article>
+      <h2 class="felicitacion">FELICITACIONES !!</h2>
+    </article>
+    <button type="button" class="btn-volver " id="volverAjugar">Volver a Jugar</button>
   </section>
 
     
@@ -50,7 +52,7 @@
 
   <!--Footer-->
 
-  <footer>
+  <footer class="footer">
     <p> Create by Lina Marcela Villa & Anamaría Medina</p>
   </footer>
  

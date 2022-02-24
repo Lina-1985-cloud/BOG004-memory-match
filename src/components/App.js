@@ -29,7 +29,12 @@ let tarjetas = []
     
     return elementos
 }
+
+
+
 generarTablero()
+
+
 
 export {generarTablero}
 
