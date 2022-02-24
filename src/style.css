@@ -7,14 +7,16 @@ html{
     height: 100%;
 }
 body{
-    min-height: 100%;
+    font-family: sans-serif;
     font-size: 1.2rem;
     
 }
 
+/*************** Sección página principal ***************/
 /* Header */
 figure.imagenBaner{
     width: 100%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +24,6 @@ figure.imagenBaner{
     padding: 10px;
 }
 
-/*************** Sección página principal ***************/
 h1{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
@@ -36,35 +37,32 @@ h2{
 
 .header{
     grid-area: header;
-    border: 2px solid salmon;
 }
 .section{
     grid-area: section;
-    border: 2px solid blueviolet;
 }
 
 
 .footer{
     grid-area: footer;
-    border: 2px solid green ;
-    height: 150px;
+    
 }
 .contenedor{
+    min-height: 100vh;
     background-image: url(./images/wp2png.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: grid;
-    gap: 10px;
     grid-template:
-        "header" 150px
-        "section" auto
-        "footer"150px;
+        "header"50px
+        "section"auto
+        "footer"80px;
     text-align: center;
 }
 
 .bg-pokemon{
-    width: 200px;
+    width: 110px;
 }
 
 .bienvenida{
@@ -76,7 +74,7 @@ h2{
     -webkit-box-shadow: -5px 11px 15px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: -5px 11px 15px -6px rgba(0,0,0,0.75);
     box-shadow: -5px 11px 15px -6px rgba(0,0,0,0.75);
-    width: 300px;
+    width: 320px;
     height: 300px;
     padding: 20px;
     border-radius: 20px;
@@ -86,7 +84,6 @@ h2{
 }
 .info{
     font-size: 1rem;
-    /* padding: 20px; */
     text-align: justify;
 }
 
@@ -117,27 +114,26 @@ footer{
 /*************** Segunda Pantalla ***************/
 
 .tablero{
-    height: 100%;
     width: 80%;
-    background-color: plum;
+    height: 85vh;
+    padding: 10px;
     margin: 0 auto;
-    display: flex;
-    flex-flow: row wrap;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     perspective: 1000px;
 }
 
 
-img{
+/* img{
     width: 100px;
-}
+} */
 
 .area-tarjeta, .tarjeta, .cara{
 
     cursor: pointer;
-    min-width: 120px;
+    min-width: 90%;
+    min-height:12vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,8 +156,7 @@ img{
 }
 
 .cara{
-    height: 100px;
-    font-size: 50px;
+    /* height: 80px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,9 +166,13 @@ img{
     background-color: #2973B9;
     transform: rotateY(180deg);
 }
+.trasera img{
+    width: 80px;
+}
 
 .delantera{
-    background: #bbcee0;
+    font-size: 30px;
+    background: #2973B9;
 }
 
 
@@ -262,6 +261,22 @@ img{
     h1{
         font-size: 2.5rem;
     }
+    .contenedor{
+        display: grid;
+        grid-template:
+            "header header header"
+            "section section section"
+            "footer footer footer";
+        text-align: center;
+    }
+
+    figure.imagenBaner{
+        height: 100px;
+    }
+    .bg-pokemon{
+        width: 200px;
+    }
+
     .bienvenida{
         width: 800px;
         height: 600px;
@@ -277,24 +292,40 @@ img{
         font-size: 2rem;
     }
     footer{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     /* segunda Pantalla */
+    .tablero{
+        height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
     .area-tarjeta, .tarjeta, .cara{
+        cursor: pointer;
         min-width: 200px;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
         
     }
     .cara{
-        height: 200px;
-        font-size: 100px;
+        font-size: 70px;
+    }
+    .trasera img{
+        width: 120px;
+        padding: 5px;
     }
     
     h2{
         font-size: 2rem;
     }
     img{
-        width: 400px;
+        width: 350px;
     }
 
     /* Tercera Pantalla */
@@ -303,12 +334,12 @@ img{
         height: 600px;
     }
     .contenedor-pokemon{
-        height: 450px;
+        height: 400px;
         width: 600px;
     }
     
     .felicitacion {
-        top: 350px;
+        top: 300px;
         left: 200px;
         width: 400px;
         height: 200px;

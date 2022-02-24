@@ -6,56 +6,57 @@
   <title>Memory Match</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="/src/styleCards.css">
-  <link rel="stylesheet" href="/pokemon-font/Pokemon Solid.ttf">
   <script src="https://kit.fontawesome.com/4de09098c3.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="contenedor">
-  <!--Header-->
-  <header class="header">
-    <figure class="imagenBaner">
-      <img src="./images/bg-pokemon.png" class="bg-pokemon" alt="Background Pokémon">
-    </figure>
-  </header>
+<body>
+  <div class="contenedor">
 
-  <!--Section index page-->
-  <section class="section" id="indexPage">
-    <article class="bienvenida">
-      <h1>Bienvenido Al Juego de Memoria de Pokémon</h1>
-      <p class="info">Al pulsar play verás 18 cartas donde podrás ver durante unos segundos las imágenes,
-        y luego el juego comenzará. Al terminar de seleccionar las parejas podrás volver a jugar, encontrando 
-        siempre las imágenes en diferentes posiciones!
-      </p>
-      <button class="btn-play" type="button" id="play" >Play</button>
-    </article>
-  </section>
-
-
-  <!-- segunda pantalla -->
-  <div id="root"></div>
-
-  <!--Tercera Pantalla -->
-  <section class=" section pantallaFinal" id="pantallaFinal">
-    <figure class="contenedor-pokemon">
-      <img src="./images/picachu.png" class="imagen-final" alt="picachu-pokémon">
-    </figure>
-    <article>
-      <h2 class="felicitacion">FELICITACIONES !!</h2>
-    </article>
-    <button type="button" class="btn-volver " id="volverAjugar">Volver a Jugar</button>
-  </section>
-
-    
+    <!--Header-->
+    <header class="header">
+      <figure class="imagenBaner">
+        <img src="./images/bg-pokemon.png" class="bg-pokemon" alt="Background Pokémon">
+      </figure>
+    </header>
+  
+    <!--Section index page-->
+    <section class="section" id="indexPage">
+      <article class="bienvenida">
+        <h1>Bienvenido Al Juego de Memoria de Pokémon</h1>
+        <p class="info">Al pulsar play verás 18 cartas donde podrás ver durante unos segundos las imágenes,
+          y luego el juego comenzará. Al terminar de seleccionar las parejas podrás volver a jugar, encontrando 
+          siempre las imágenes en diferentes posiciones!
+        </p>
+        <button class="btn-play" type="button" id="play" >Play</button>
+      </article>
+    </section>
+  
+  
+    <!-- segunda pantalla -->
+    <div id="root"></div>
+  
+    <!--Tercera Pantalla -->
+    <section class=" section pantallaFinal" id="pantallaFinal">
+      <figure class="contenedor-pokemon">
+        <img src="./images/picachu.png" class="imagen-final" alt="picachu-pokémon">
+      </figure>
+      <article>
+        <h2 class="felicitacion">FELICITACIONES !!</h2>
+      </article>
+      <button type="button" class="btn-volver " id="volverAjugar">Volver a Jugar</button>
+    </section>
+  
+      
+      
     
   
+    <!--Footer-->
+  
+    <footer class="footer">
+      <p> Create by Lina Marcela Villa & Anamaría Medina</p>
+    </footer>
+  </div>
 
-  <!--Footer-->
-
-  <footer class="footer">
-    <p> Create by Lina Marcela Villa & Anamaría Medina</p>
-  </footer>
- 
   <script src="main.js" type="module"></script>
 </body>
 
