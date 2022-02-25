@@ -16,7 +16,7 @@ Para la elaboración de la definición del producto primero se tomó como base l
 con temática de Pokémon, teniendo esta primera definición se le realizo a un grupo poblacional de 10 personas 
 de 10 a 60 años una encuesta para entender que y como les interesaba ver el juego. 
 
-(PONER IMAGENES DE LAS ENCUESTAS)
+![Encuestas](/encuesta.PNG)
 
 Teniendo los resultados arrojados en la encuesta se definió el producto de la siguiente manera: 
 
