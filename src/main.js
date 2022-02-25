@@ -21,6 +21,8 @@ var contadorDeParejas = 0
 const tarjetas = document.querySelectorAll(".tarjeta");
 function voltearTarjeta() {
     if (bloquearTablero) return;
+    if (this === primeraTarjeta) return;
+
     this.classList.add("voltear");
     if (!tarjetaVolteada) {
         tarjetaVolteada = true;
@@ -53,7 +55,7 @@ function desabilitarTarjetas (){
     primeraTarjeta.removeEventListener('click' , voltearTarjeta);
     segundaTarjeta.removeEventListener('click' , voltearTarjeta);
 
-    if (contadorDeParejas === 1){
+    if (contadorDeParejas === 9){
         
         setTimeout(() => {
         ganaste()   

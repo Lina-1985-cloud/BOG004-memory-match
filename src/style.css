@@ -59,6 +59,7 @@ h2{
         "section"auto
         "footer"80px;
     text-align: center;
+    
 }
 
 .bg-pokemon{
@@ -69,6 +70,7 @@ h2{
     position: absolute;
     top: 50%;
     left: 50%;
+    margin: 0 auto;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.63);
     -webkit-box-shadow: -5px 11px 15px -6px rgba(0,0,0,0.75);
@@ -80,7 +82,7 @@ h2{
     border-radius: 20px;
     font-family:  Arial, Helvetica, sans-serif;
     font-size: 2rem;
-    position: relative;
+    /* position: relative; */
 }
 .info{
     font-size: 1rem;
@@ -95,6 +97,8 @@ h2{
     border-radius: 20px;
     font-size: 1rem;
     color: white;
+    
+
 }
 
 
@@ -215,8 +219,8 @@ img{
 }
 
 .section.pantallaFinal{
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 300px;
 }
 .pantallaFinal{
     top: 50%;
@@ -243,7 +247,7 @@ img{
     justify-content: center;
     align-items: center;
     top: 180px;
-    left: 100px;
+    left: 70px;
     width: 200px;
     height: 120px;
     border-radius: 20px;
@@ -251,22 +255,23 @@ img{
 }
 .btn-volver{
     margin-top: 6rem;
-    width: 60%;
-    padding: 15px;
-    font-size: 1.5rem;
+    width: 80%;
+    left: 5px;
+    padding: 10px;
+    font-size: 1rem;
 }
 
 /* Media queries */
 @media screen and  (min-width:600px) {
     h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .contenedor{
         display: grid;
         grid-template:
-            "header header header"
-            "section section section"
-            "footer footer footer";
+            "header header header" 
+            "section section section" 
+            "footer footer footer" 50px ;
         text-align: center;
     }
 
@@ -278,30 +283,38 @@ img{
     }
 
     .bienvenida{
-        width: 800px;
-        height: 600px;
+        width: 600px;
+        height: 400px;
     }
+
     .info{
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 3rem;
         padding: 2rem;
     }
     
     .btn-play, .btn-volver{
-        padding: 30px;
-        font-size: 2rem;
+        padding: 20px;
+        font-size: 1.5rem;
+       
     }
     footer{
         font-size: 1.5rem;
+        
     }
     
     /* segunda Pantalla */
     .tablero{
         height: 100%;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10px;
+
+        /* display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
     }
     .area-tarjeta, .tarjeta, .cara{
         cursor: pointer;
