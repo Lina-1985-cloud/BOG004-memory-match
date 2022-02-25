@@ -55,7 +55,7 @@ function desabilitarTarjetas (){
     primeraTarjeta.removeEventListener('click' , voltearTarjeta);
     segundaTarjeta.removeEventListener('click' , voltearTarjeta);
 
-    if (contadorDeParejas === 1){
+    if (contadorDeParejas === 9){
         
         setTimeout(() => {
         ganaste()   
