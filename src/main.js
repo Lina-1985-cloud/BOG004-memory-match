@@ -43,7 +43,7 @@ function validarParejas(){
     let sonPareja = primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon
     if (sonPareja){
         contadorDeParejas += 1
-        desabilitarTarjetas()
+        deshabilitarTarjetas()
     }else {
         desplegarTarjetas()
         
@@ -51,7 +51,7 @@ function validarParejas(){
 }
 
 /* función para desabilitar las tarjetas */
-function desabilitarTarjetas (){
+function deshabilitarTarjetas (){
     primeraTarjeta.removeEventListener('click' , voltearTarjeta);
     segundaTarjeta.removeEventListener('click' , voltearTarjeta);
 
@@ -88,6 +88,6 @@ function ganaste(){
 // volver al juego
 let volverAlJuego = document.getElementById("volverAjugar")
 volverAlJuego.addEventListener("click", ()=>{
-    location.reload('div')
-    document.querySelector("div").style.display = "none";
+    location.reload('section')
+    document.querySelector(".pantallaFinal").style.display = "none";
 })

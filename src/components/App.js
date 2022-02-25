@@ -14,7 +14,7 @@ let tarjetas = []
             <div class="area-tarjeta">
                 <div class="tarjeta" data-pokemon="${data.items[i].id}">
                     <div class="cara trasera" >
-                        <img src="${data.items[i].image}" id=""  alt="Pokémon">
+                        <img src="${data.items[i].image}" alt="Pokémon">
                     </div>
                     <div class="cara delantera">
                         <i class="far fa-question-circle"></i>
