@@ -164,12 +164,10 @@ footer{
     background: #2973B9;
 }
 
-
-
-.tarjeta:active{
+/* .tarjeta:active{
     transform: scale(.97);
     transition: transform .2;
-}
+} */
 .area-tarjeta .voltear{
     transform: rotateY(180deg);
 }
@@ -255,9 +253,9 @@ img{
         width: 100%;
         display: grid;
         grid-template:
-            "header header header" 
-            "section section section" 
-            "footer footer footer" 50px ;
+            "header" 
+            "section" 
+            "footer" 50px ;
         text-align: center;
     }
 

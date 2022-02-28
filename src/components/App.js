@@ -36,6 +36,8 @@ generarTablero()
 
 
 
+
+
 export {generarTablero}
 
 
