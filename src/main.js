@@ -2,7 +2,7 @@ import { generarTablero } from "./components/App.js";
 
 document.getElementById("root").appendChild(generarTablero());
 
-// Cambio pantalla
+// Cambio pantallas
 document.getElementById("root").style.display = "none";
 document.getElementById('pantallaFinal').style.display = "none";
 const section = (document.getElementById("root"))
@@ -12,23 +12,60 @@ play.addEventListener("click", () => {
     section.style.display = "block";
 });
 
-// función click a las tarjetas
+// funcion ganaste cambio pantalla
+
+function ganaste(){
+    document.getElementById("root").style.display = "none";
+    document.getElementById('pantallaFinal').style.display = "block";
+}
+
+
+// Variables Globales
 var tarjetaVolteada = false;
 var bloquearTablero = false;
 var primeraTarjeta, segundaTarjeta;
-var contadorDeParejas = 0
+var contadorDeParejas = 0;
 
+// validar tarjetas
 const tarjetas = document.querySelectorAll(".tarjeta");
-function voltearTarjeta() {
-    if (bloquearTablero) return;
-    if (this === primeraTarjeta) return;
 
+function validarParejas(){
+    let sonPareja = primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon
+    if (sonPareja){
+        contadorDeParejas += 1
+        primeraTarjeta.removeEventListener('click' , voltearTarjeta);
+        segundaTarjeta.removeEventListener('click' , voltearTarjeta);
+    
+        if (contadorDeParejas === 9){
+            
+            setTimeout(() => {
+            ganaste()   
+            },1000);
+    
+        }
+    }else {
+        bloquearTablero = true;
+        setTimeout(() => {
+            primeraTarjeta.classList.remove('voltear');
+            segundaTarjeta.classList.remove('voltear');
+        bloquearTablero = false    
+        }, 1500 );
+        
+    }
+}
+
+/* función para voltear tarjetas*/
+tarjetas.forEach((tarjeta) => tarjeta.addEventListener("click", voltearTarjeta));
+function voltearTarjeta() {
+    if (bloquearTablero) return; // cuando bloquear tablero sea falso sigue al siguiente if
+    if (this === primeraTarjeta) // Esto no permite que se autovaliden las tarjetas
+    return; // y este nos retorna a la siguiente condición
     this.classList.add("voltear");
     if (!tarjetaVolteada) {
         tarjetaVolteada = true;
         primeraTarjeta = this;
-
         return;
+
     } else{
         tarjetaVolteada = false;
         segundaTarjeta = this;
@@ -37,53 +74,7 @@ function voltearTarjeta() {
     }
 
 }
-/* función para chequiar las parejas*/
 
-function validarParejas(){
-    let sonPareja = primeraTarjeta.dataset.pokemon === segundaTarjeta.dataset.pokemon
-    if (sonPareja){
-        contadorDeParejas += 1
-        deshabilitarTarjetas()
-    }else {
-        desplegarTarjetas()
-        
-    }
-}
-
-/* función para desabilitar las tarjetas */
-function deshabilitarTarjetas (){
-    primeraTarjeta.removeEventListener('click' , voltearTarjeta);
-    segundaTarjeta.removeEventListener('click' , voltearTarjeta);
-
-    if (contadorDeParejas === 9){
-        
-        setTimeout(() => {
-        ganaste()   
-        },1000);
-
-    }
-}
-
-/*función para desplegar las tarjetas*/
-function desplegarTarjetas (){
-    bloquearTablero = true;
-    setTimeout(() => {
-        primeraTarjeta.classList.remove('voltear');
-        segundaTarjeta.classList.remove('voltear');
-    bloquearTablero = false    
-    }, 1500 );
-    
-}
-
-tarjetas.forEach((tarjeta) =>
-    tarjeta.addEventListener("click", voltearTarjeta)
-);
-
-function ganaste(){
-    document.getElementById("root").style.display = "none";
-    document.getElementById('pantallaFinal').style.display = "block";
-
-}
 
 // volver al juego
 let volverAlJuego = document.getElementById("volverAjugar")
